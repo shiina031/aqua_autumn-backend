@@ -1,4 +1,4 @@
-import express, { NextFunction, Request, Response, Router } from 'express';
+import express, { Request, Response, Router } from 'express';
 import { createUser, deleteUser, getOwnData, updateUser } from '../../service/customer/user';
 
 const userRouterForCustomer: Router = express.Router();
@@ -14,7 +14,7 @@ userRouterForCustomer.get('/:id', (req: Request, res: Response) => {
 });
 
 // ユーザー情報編集
-userRouterForCustomer.patch('/edit/:id', (req: Request, res: Response, next: NextFunction) => {
+userRouterForCustomer.patch('/edit/:id', (req: Request, res: Response) => {
   updateUser(req, res);
 });
 
